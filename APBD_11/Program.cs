@@ -1,4 +1,5 @@
 using APBD_11.DAL;
+using APBD_11.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace APBD_11;
@@ -16,7 +17,7 @@ public class Program
         {
             optionsBuilder.UseSqlServer(connectionString);
         });
-        
+        builder.Services.AddScoped<IPrescriptionService, PrescriptionService>();
         builder.Services.AddOpenApi();
 
         var app = builder.Build();
