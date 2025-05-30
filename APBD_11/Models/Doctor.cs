@@ -1,7 +1,10 @@
-﻿namespace APBD_11.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace APBD_11.Models;
 
 public class Doctor
 {
+    [Key]
     public int IdDoctor { get; set; }
     public string FirstName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;

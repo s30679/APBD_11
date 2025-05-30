@@ -1,7 +1,10 @@
-﻿namespace APBD_11.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace APBD_11.Models;
 
 public class Prescription
 {
+    [Key]
     public int IdPrescription { get; set; }
     public DateTime Date { get; set; }
     public DateTime DueDate { get; set; }

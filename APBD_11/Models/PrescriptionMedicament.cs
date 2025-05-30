@@ -1,7 +1,10 @@
-﻿namespace APBD_11.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace APBD_11.Models;
 
 public class PrescriptionMedicament
 {
+    [Key]
     public int IdMedicament { get; set; }
     public int IdPrescription { get; set; }
     public int Dose { get; set; }
