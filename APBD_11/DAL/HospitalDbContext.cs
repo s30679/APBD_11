@@ -30,17 +30,5 @@ public class HospitalDbContext : DbContext
             .HasForeignKey(p => p.IdPatient);
         modelBuilder.Entity<Prescription>().HasOne(p => p.Doctor).WithMany(d => d.Prescriptions)
             .HasForeignKey(p => p.IdDoctor);
-        
-        modelBuilder.Entity<Medicament>().HasData(
-            new Medicament { IdMedicament = 1, Name = "Paracetamol", Description = "Ból i gorączka", Type = "Tabletki" },
-            new Medicament { IdMedicament = 2, Name = "Apap", Description = "Ból głowy", Type = "Tabletki" });
-
-        modelBuilder.Entity<Doctor>().HasData(
-            new Doctor { IdDoctor = 1, FirstName = "Anna", LastName = "Kowalska", Email = "anna.kowalska@example.com" },
-            new Doctor { IdDoctor = 2, FirstName = "Jan", LastName = "Nowak", Email = "jan.nowak@example.com" });
-
-        modelBuilder.Entity<Patient>().HasData(
-            new Patient { IdPatient = 1, FirstName = "Adam", LastName = "Mickiewicz", Birthdate = new DateTime(1900, 1, 1) },
-            new Patient { IdPatient = 2, FirstName = "Ewa", LastName = "Konopka", Birthdate = new DateTime(1990, 5, 10) });
     }
 }
